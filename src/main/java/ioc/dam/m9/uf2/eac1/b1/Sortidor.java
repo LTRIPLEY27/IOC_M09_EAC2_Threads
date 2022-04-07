@@ -32,13 +32,16 @@ public class Sortidor {
 
 	//PARÁMETRO CLIENTE Y TIEMPO
 	public void processarCompra(Client client, long timeStamp) {
+		//long timeFinished;
 		System.out.println("El sortidor " + this.nom + " COMENCA A DISPENSAR CARBURANT AL CLIENT: " + client.getNom() + " EN EL Temps: " + (System.currentTimeMillis() - timeStamp) / 1000 + " seg");
 
 		for (int i = 0; i < client.getNumLitres(); i++) {
+			//System.out.println("Processat " + (i + 1) + " litres  ->Temps: "+ (((System.currentTimeMillis() - timeStamp) / 1000) + i) + " seg");
 			System.out.println("Processat " + (i + 1) + " litres  ->Temps: "+ (System.currentTimeMillis() - timeStamp)  + " seg");
 		}
 
-		System.out.println("Sortidor finalizado");
+		System.out.println("El sortidor " + this.nom + " HA FINALIZADO: " + client.getNom() + " EN EL Temps: " + (System.currentTimeMillis() - timeStamp) + " seg");
+		timeStamp = (System.currentTimeMillis() - timeStamp);
 	}
 
 	private void esperarXsegons(int segons) {
